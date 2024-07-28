@@ -67,7 +67,7 @@ class Record:
                 return phone
 
     # privat method
-    def __find_phone_index__(self, phone_to_find):
+    def _find_phone_index(self, phone_to_find):
         for i, phone in enumerate(self.phones):
             if phone.value == phone_to_find:
                 return i
@@ -77,7 +77,7 @@ class Record:
         self.phones.remove(phone_to_delete)
 
     def edit_phone(self, phone, new_phone):
-        index = self.__find_phone_index__(phone)
+        index = self._find_phone_index(phone)
         self.phones[index] = Phone(new_phone)
 
     def add_birthday(self, birthday):
